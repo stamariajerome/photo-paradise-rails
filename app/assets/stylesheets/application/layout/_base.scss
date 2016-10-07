@@ -1,0 +1,24 @@
+header nav {
+
+  &.navbar {
+      -webkit-border-radius: 0;
+      -ms-border-radius: 0;
+      border-radius: 0;
+      background-color: $backgroundColorWhite;
+      border: 1px solid $borderColorGray;
+  }
+
+}
+
+footer {
+  background-color: $backgroundColorWhite;
+  border: 1px solid $borderColorGray;
+  padding: 50px 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  & span {
+    text-align: center;
+    display: block;
+  }
+}

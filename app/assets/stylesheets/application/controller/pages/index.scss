@@ -1,0 +1,49 @@
+.thumbnail {
+  position: relative;
+  margin-bottom: 0;
+  & .caption {
+    & p {
+      margin: 5px 0 0 0;
+    }
+  }
+
+
+  & ul.tool-group {
+    margin: 0;
+    padding: 0 9px;
+    display: inline-block;
+
+    & li {
+      list-style: none;
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    & li > a {
+      color: rgb(173, 173, 173);
+    }
+
+    & li:last-child > a:hover {
+      color: rgb(45, 191, 38) !important;
+    }
+
+    & li:first-child > a:hover {
+      color: red !important;
+    }
+  }
+
+  & .comment {
+    position: absolute;
+    right: 0;
+    margin: 0 13px 4px 0;
+  }
+}
+
+.comment-box {
+  display: none;
+  padding: 9px;
+  & textarea {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+}

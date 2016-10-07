@@ -1,0 +1,18 @@
+.form-photo-field {
+  position: relative;
+  & .form-photo-icon {
+    left: 3%;
+    bottom: 30%;
+    position: absolute;
+  }
+
+  & .form-photo-text-field {
+    padding-left: 25px;
+  }
+}
+
+.hint {
+  font-style: italic;
+  font-size: 10px;
+  color: rgb(69, 69, 69);
+}

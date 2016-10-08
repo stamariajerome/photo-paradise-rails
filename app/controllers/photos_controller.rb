@@ -10,11 +10,15 @@ class PhotosController < ApplicationController
 
     # TODO DRY
     root_path_page = redirect_to new_photo_path
+
+    # TODO append to current user
     @photo.user_id = 1;
+
     if @photo.save
       flash[:success] = 'Picture has been successfuly added'
       root_path_page
     else
+      logger.ap @photo.errors.full_messages
       flash[:danger] = 'There was something wrong adding the photo'
       root_path_page
     end

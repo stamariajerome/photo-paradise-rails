@@ -10,7 +10,7 @@ class PhotosController < ApplicationController
 
     # TODO DRY
     root_path_page = redirect_to new_photo_path
-
+    @photo.user_id = 1;
     if @photo.save
       flash[:success] = 'Picture has been successfuly added'
       root_path_page

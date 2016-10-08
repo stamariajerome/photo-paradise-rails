@@ -4,4 +4,7 @@ Rails.application.routes.draw do
 
   # Photos route
   resources :photos
+
+  # User routes
+  resources :users
 end

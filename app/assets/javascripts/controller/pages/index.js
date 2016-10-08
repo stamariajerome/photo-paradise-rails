@@ -7,9 +7,8 @@ $(function() {
     if (commentBox.show()) {
       commentBox.hide();
     }
-
     $(this).parent()
            .next()
-           .show();
+           .fadeIn();
   });
 });

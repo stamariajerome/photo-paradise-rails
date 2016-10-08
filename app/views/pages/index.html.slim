@@ -1,0 +1,33 @@
+.rows
+
+  - @photos.each do |photo|
+    
+    .col-lg-3
+    
+      .thumbnail
+        = link_to do
+            = image_tag photo.url, alt: photo.title
+        
+        .caption
+          h4 Title
+          span
+            a href="#" jerome
+          p 
+            | This topic is useful for me because i didnt know how to describe a picture 
+              like the position of an object, what's happening and where is something i 
+              recommend read more
+              
+        ul.tool-group
+          li
+            a = fa_icon 'heart'
+          li
+            a = fa_icon 'plus'
+            
+        span.comment
+          a.comment-link 100 comments
+          
+        .comment-box
+          = form_tag do
+            
+            = text_area_tag :comment, nil, class: 'form-control', rows: "3"
+            = button_tag  'Add comment', class: "btn btn-primary"

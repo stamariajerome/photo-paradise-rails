@@ -1,0 +1,43 @@
+.row
+
+  .col-lg-8.col-lg-offset-2
+      
+      .panel.panel-default
+      
+        .panel-heading
+          h4 
+            = fa_icon 'camera'
+            = @photo.new_record? ? 'Add Photo' : "Edit #{@photo.title}"
+              
+        .panel-body
+        
+          = render "message"
+          
+          .col-lg-6
+          
+            = form_for @photo do |f|
+              
+              .form-group
+                = f.label :title
+                .form-photo-field
+                  = fa_icon 'link', class: 'form-photo-icon'
+                  = f.text_field :title, class: 'form-control form-photo-textfield', autocomplete: 'off'
+              
+              .form-group
+                = f.label :url
+                .form-photo-field
+                  = fa_icon 'link', class: 'form-photo-icon'
+                  = f.text_field :url, class: 'form-control form-photo-textfield'  
+              
+              .form-group
+                = f.label :description
+                = f.text_area :description, rows: '8', class: 'form-control'
+                span.hint Max 200 characters
+                
+                .form-group
+                  = f.submit @photo.new_record? ? 'Add Photo' : 'Update Photo', class: 'btn btn-primary'
+                
+  
+          .col-lg-6
+            img src="#{@photo.url}" alt="#{@photo.title}"
+            / put an image here

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   # Pages route
   root 'pages#index'
+  delete '/', to: 'pages#destroy'
 
   # Photos route
   resources :photos

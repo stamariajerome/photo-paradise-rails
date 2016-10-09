@@ -1,10 +1,15 @@
-= form_tag root_path, method: 'get' do
+.row
+  .col-lg-6
+    .input-group
+      span.input-group-btn
+         = button_tag fa_icon('search', text: 'Search'), class: "btn btn-default", id: "btn-search"
+      .search-box
+        = text_field_tag :search, nil, class: 'form-control search-field', placeholder: "Search for..."
+        = fa_icon 'circle-o-notch spin lg', class: "search-icon-spinner"
 
-  = button_tag 'search', name: nil, type: 'submit', class: 'btn btn-primary'
-  = text_field_tag :search, nil, class: 'form-control'
+= link_to 'hello', root_path, remote: true, method: :delete
 
-
-.rows
+.row.main-index
   - @photos.each do |photo|
     
     .col-lg-3
@@ -19,17 +24,14 @@
           span
             = link_to photo.user.username, user_path(photo.user_id)
                     
-          
           p 
-            | This topic is useful for me because i didnt know how to describe a picture 
-              like the position of an object, what's happening and where is something i 
-              recommend read more
+            = photo.description
               
         ul.tool-group
           li
-            a = fa_icon 'heart'
+            a href="#" = fa_icon 'heart'
           li
-            a = fa_icon 'plus'
+            a href="#" = fa_icon 'plus'
             
         span.comment
           a.comment-link href="#" 100 comments

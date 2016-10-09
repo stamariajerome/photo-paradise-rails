@@ -15,3 +15,11 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
+
+function hideSpinner() {
+  $('.search-icon-spinner').css('display', 'none');
+}
+
+function showSpinner() {
+  $('.search-icon-spinner').css('display', 'block');
+}

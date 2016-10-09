@@ -1,0 +1,21 @@
+.col-lg-6.col-lg-offset-3
+
+  .panel.panel-default
+    
+    .panel-heading
+      = render 'message'
+      h4 Login
+      
+    .panel-body
+      = form_for :session do |f|
+          
+          .form-group
+            = f.label :email
+            = f.email_field :email, class: 'form-control', required: true
+            
+          .form-group
+            = f.label :password
+            = f.password_field :password, class: 'form-control'
+            
+          .form-group
+            = f.submit 'Login', class: 'btn btn-primary'

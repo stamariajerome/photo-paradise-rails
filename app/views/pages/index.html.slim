@@ -1,5 +1,10 @@
-.rows
+= form_tag root_path, method: 'get' do
 
+  = button_tag 'search', name: nil, type: 'submit', class: 'btn btn-primary'
+  = text_field_tag :search, nil, class: 'form-control'
+
+
+.rows
   - @photos.each do |photo|
     
     .col-lg-3
@@ -9,9 +14,12 @@
             = image_tag photo.url, alt: photo.title
         
         .caption
-          h4 Title
+          h4
+            = photo.title
           span
-            a href="#" jerome
+            = link_to photo.user.username, user_path(photo.user_id)
+                    
+          
           p 
             | This topic is useful for me because i didnt know how to describe a picture 
               like the position of an object, what's happening and where is something i 

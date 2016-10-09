@@ -6,5 +6,10 @@ Rails.application.routes.draw do
   resources :photos
 
   # User routes
-  resources :users
+  get '/register', to: 'users#new'
+  resources :users, except: [:new]
+
+  # Session routes
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
 end
